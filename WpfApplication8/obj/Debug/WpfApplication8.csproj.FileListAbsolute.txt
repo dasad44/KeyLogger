@@ -1,0 +1,18 @@
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\bin\Debug\WpfApplication8.exe.config
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\obj\Debug\MainWindow.baml
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\obj\Debug\MainWindow.g.cs
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\obj\Debug\App.g.cs
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\obj\Debug\WpfApplication8_MarkupCompile.cache
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\obj\Debug\WpfApplication8.g.resources
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\obj\Debug\WpfApplication8.Properties.Resources.resources
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\obj\Debug\WpfApplication8.csproj.GenerateResource.Cache
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\bin\Debug\WpfApplication8.exe
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\bin\Debug\WpfApplication8.pdb
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\obj\Debug\WpfApplication8.exe
+c:\users\sochi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\obj\Debug\WpfApplication8.pdb
+C:\Users\SoChi\documents\visual studio 2013\Projects\WpfApplication8\WpfApplication8\obj\Debug\WpfApplication8.csprojResolveAssemblyReference.cache
+C:\Users\SoChi\keyLogger\Keylogger-tests\KeyLogger\WpfApplication8\bin\Debug\WpfApplication8.exe.config
+C:\Users\SoChi\keyLogger\Keylogger-tests\KeyLogger\WpfApplication8\obj\Debug\WpfApplication8.exe
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\bin\Debug\WpfApplication8.exe.config
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\WpfApplication8.exe
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\WpfApplication8.pdb
