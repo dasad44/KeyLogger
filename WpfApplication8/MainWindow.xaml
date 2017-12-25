@@ -3,22 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="420" Width="525" KeyDown="Window_KeyDown" Closing="Window_Closing" Closed="Window_Closed">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="353*"/>
-            <ColumnDefinition Width="164*"/>
-            <ColumnDefinition Width="0*"/>
-        </Grid.ColumnDefinitions>
-        <Label x:Name="label" Content="" HorizontalAlignment="Left" Margin="127,229,0,0" VerticalAlignment="Top" Height="51" Width="78"/>
         <Button Content="Start" HorizontalAlignment="Left" Margin="62,54,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="28" />
         <Button Content="Stop" HorizontalAlignment="Left" Margin="62,99,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Height="28"/>
         <GroupBox Header="Menu" HorizontalAlignment="Left" Margin="22,26,0,0" VerticalAlignment="Top" Height="127" Width="161"/>
-        <GroupBox Header="Instuction" HorizontalAlignment="Left" Margin="282,26,0,0" VerticalAlignment="Top" Height="254" Width="225" Grid.ColumnSpan="2">
-            <TextBlock HorizontalAlignment="Left" Margin="10,10,-2,0" TextWrapping="Wrap" Text="TextBdsadasdadasdasdasdsadsadsdsdsadsadsadsadsadsafredgvstgbtbhbtshbhntsdhngshnshgsfhngshnshns sh  hgfsh ghgs hgs hshsfh slock" VerticalAlignment="Top" Height="218" Width="205"/>
+        <GroupBox Header="Instuction" HorizontalAlignment="Left" Margin="246,26,0,0" VerticalAlignment="Top" Height="254" Width="261">
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,-2,0" TextWrapping="Wrap" Text="TextBdsadasdadasdasdasdsadsadsdsdsadsadsadsadsadsafredgvstgbtbhbtshbhntsdhngshnshgsfhngshnshns sh  hgfsh ghgs hgs hshsfh slock" VerticalAlignment="Top" Height="218" Width="205"/>
         </GroupBox>
-        <Button x:Name="Hide" Content="Hide" HorizontalAlignment="Left" Margin="219,285,0,0" VerticalAlignment="Top" Width="75" Click="Hide_Click"/>
-
-
-
-
+        <Button x:Name="Hide1" Content="Hide" HorizontalAlignment="Left" Margin="219,285,0,0" VerticalAlignment="Top" Width="75" Click="Hide_Click"/>
     </Grid>
 </Window>
