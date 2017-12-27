@@ -16,3 +16,13 @@ C:\Users\SoChi\keyLogger\Keylogger-tests\KeyLogger\WpfApplication8\obj\Debug\Wpf
 C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\bin\Debug\WpfApplication8.exe.config
 C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\WpfApplication8.exe
 C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\WpfApplication8.pdb
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\bin\Debug\WpfApplication8.exe
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\bin\Debug\WpfApplication8.pdb
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\WpfApplication8.csprojResolveAssemblyReference.cache
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\MainWindow.baml
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\MainWindow.g.cs
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\App.g.cs
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\WpfApplication8_MarkupCompile.cache
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\WpfApplication8.g.resources
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\WpfApplication8.Properties.Resources.resources
+C:\Users\SoChi\Documents\Visual Studio 2013\Projects\KeyLogger\WpfApplication8\obj\Debug\WpfApplication8.csproj.GenerateResource.Cache
