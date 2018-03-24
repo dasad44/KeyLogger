@@ -271,14 +271,21 @@ namespace WpfApplication8
         }
         public void Save_Content_To_File()
         {
-            while (condition)
+            try
             {
-                using (StreamWriter Snd = File.CreateText(FileName_IN))
+                while (condition)
                 {
-                    Snd.Write(File_Content);
-                    File_Content += "///.";
-                    Thread.Sleep(3000);
+                    using (StreamWriter Snd = File.CreateText(FileName_IN))
+                    {
+                        Snd.Write(File_Content);
+                        File_Content += "///.";
+                        Thread.Sleep(3000);
+                    }
                 }
+            }
+            catch (System.ArgumentNullException)
+            {
+                MessageBox.Show("Blad","Wybierz Plik");
             }
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
