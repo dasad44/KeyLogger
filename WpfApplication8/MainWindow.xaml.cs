@@ -43,6 +43,7 @@ namespace WpfApplication8
                     //label.Content = Convert.ToString(e.Key);
                     key = Convert.ToString(e.Key);
                     Save_With_Big_Letters(key);
+                    
                 }
                 else
                 {
@@ -166,7 +167,7 @@ namespace WpfApplication8
               }
           }
           public void Save_With_Small_Letters(string key)
-        {
+          {
          // file.Write(letter.ToString().ToLower());
             switch (key.ToLower())
             {
@@ -258,6 +259,11 @@ namespace WpfApplication8
                     file.Write(Convert.ToString(key).ToLower());
                     break;
             }
+        }
+
+        private void Window_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            Keyboard.Focus(MainWindow);
         }
     }
 }
