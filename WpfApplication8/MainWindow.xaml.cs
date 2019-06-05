@@ -264,7 +264,7 @@ namespace WpfApplication8
         private void Mail_button(object sender, RoutedEventArgs e)
         {
             string mailbox = mailBox.Text;
-            mailhandler.SetTimer(aTimer, mailbox, file);
+            mailhandler.SetTimer(aTimer, mailbox);
             //aTimer.Stop();
             //aTimer.Dispose();
             Console.WriteLine(mailbox);

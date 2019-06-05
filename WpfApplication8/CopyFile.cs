@@ -15,7 +15,14 @@ namespace WpfApplication8
             string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
             string destFile = System.IO.Path.Combine(targetPath, targetFile);
             System.IO.Directory.CreateDirectory(targetPath);
-            System.IO.File.Copy(sourceFile, destFile, true);
+            try
+            {
+                System.IO.File.Copy(sourceFile, destFile, true);                //bug dostęp do pliku
+            }
+            catch(Exception ex)
+            {
+                
+            }
 
             if (System.IO.Directory.Exists(sourcePath))
             {
@@ -36,7 +43,14 @@ namespace WpfApplication8
 
         public void DelFile(string fileName)
         {
-            System.IO.File.Delete(fileName);
+            try
+            {
+                System.IO.File.Delete(fileName);
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
     }
 }
