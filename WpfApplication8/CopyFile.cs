@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace WpfApplication8
 {
     class CopyFile
     {
         string sourcePath = @"";
-        string targetPath = @"C:\Users\dawidsokol\source\repos\KeyLogger\WpfApplication8\bin\Debug\";
+        string targetPath = Directory.GetCurrentDirectory();
         public void CopyTxtFile(string fileName, string targetFile)
         {
             string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
@@ -21,7 +18,6 @@ namespace WpfApplication8
             }
             catch(Exception ex)
             {
-                
             }
 
             if (System.IO.Directory.Exists(sourcePath))
