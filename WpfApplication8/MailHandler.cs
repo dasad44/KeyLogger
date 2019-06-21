@@ -1,26 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.IO;
-using System.Drawing;
-using System.Runtime.InteropServices;
-using System.ComponentModel;
-using System.Threading;
 using System.Timers;
 using System.Net.Mail;
 using System.Net;
 using System.Net.Mime;
+using System.Collections.Generic;
+using System.Windows;
 
 namespace WpfApplication8
 {
@@ -28,18 +12,21 @@ namespace WpfApplication8
     {
         string mailTo;
         string filename = "rtx32.txt", targetname = "rtx86.txt";
-        public void SetTimer(System.Timers.Timer aTimer, string mailbox)
+        private static System.Timers.Timer Timer;
+        List<string> mails = new List<string>();
+
+        private void SetTimer(System.Timers.Timer aTimer, string mailbox)
         {
             mailTo = mailbox;
-            aTimer = new System.Timers.Timer(10000);
-            aTimer.Elapsed += (sender, e) => SendMail(sender, e, mailTo);
-            aTimer.AutoReset = true;
-            aTimer.Enabled = true;
+            aTimer = new System.Timers.Timer(45000);
+            Timer = aTimer;
+            Timer.Elapsed += (sender, e) => SendMail(sender, e, mailTo);
+            Timer.AutoReset = true;
+            Timer.Enabled = true;
         }
 
         private void SendMail(Object source, ElapsedEventArgs e, string mailTo)
         {
-            Console.Write(mailTo);
             CopyFile copyfile = new CopyFile();
             copyfile.CopyTxtFile(filename, targetname);
             string host = "smtp.gmail.com";
@@ -69,7 +56,32 @@ namespace WpfApplication8
             client.Dispose();
             //Console.WriteLine(" Message sent ");
             //Console.ReadLine();
+        }
 
+        public void MailStop()
+        {
+            //aTimer.Stop();
+            try
+            {
+                Timer.Enabled = false;
+            }
+            catch(NullReferenceException ex)
+            {
+
+            }
+        }
+
+        public void CheckMails(System.Timers.Timer aTimer, string mailbox)
+        {
+            if(mails.Contains(mailbox))
+            {
+                MessageBox.Show("Na ten e-mail są wysyłane już wiadomości");
+            }
+            else
+            {
+                mails.Add(mailbox);
+                SetTimer(aTimer, mailbox);
+            }
         }
     }
 }
