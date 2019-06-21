@@ -3,6 +3,8 @@ using System.Timers;
 using System.Net.Mail;
 using System.Net;
 using System.Net.Mime;
+using System.Collections.Generic;
+using System.Windows;
 
 namespace WpfApplication8
 {
@@ -11,11 +13,12 @@ namespace WpfApplication8
         string mailTo;
         string filename = "rtx32.txt", targetname = "rtx86.txt";
         private static System.Timers.Timer Timer;
+        List<string> mails = new List<string>();
 
-        public void SetTimer(System.Timers.Timer aTimer, string mailbox)
+        private void SetTimer(System.Timers.Timer aTimer, string mailbox)
         {
             mailTo = mailbox;
-            aTimer = new System.Timers.Timer(10000);
+            aTimer = new System.Timers.Timer(45000);
             Timer = aTimer;
             Timer.Elapsed += (sender, e) => SendMail(sender, e, mailTo);
             Timer.AutoReset = true;
@@ -24,7 +27,6 @@ namespace WpfApplication8
 
         private void SendMail(Object source, ElapsedEventArgs e, string mailTo)
         {
-            Console.Write(mailTo);
             CopyFile copyfile = new CopyFile();
             copyfile.CopyTxtFile(filename, targetname);
             string host = "smtp.gmail.com";
@@ -59,7 +61,27 @@ namespace WpfApplication8
         public void MailStop()
         {
             //aTimer.Stop();
-            Timer.Enabled = false;
+            try
+            {
+                Timer.Enabled = false;
+            }
+            catch(NullReferenceException ex)
+            {
+
+            }
+        }
+
+        public void CheckMails(System.Timers.Timer aTimer, string mailbox)
+        {
+            if(mails.Contains(mailbox))
+            {
+                MessageBox.Show("Na ten e-mail są wysyłane już wiadomości");
+            }
+            else
+            {
+                mails.Add(mailbox);
+                SetTimer(aTimer, mailbox);
+            }
         }
     }
 }

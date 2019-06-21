@@ -92,6 +92,9 @@ namespace WpfApplication8
                 case "OemQuestion":
                     file.Write("?");
                     break;
+                case "Return":
+                    file.Write("ENTER");
+                    break;
                 default:
                     file.Write(key);
                     break;
@@ -184,6 +187,9 @@ namespace WpfApplication8
                     break;
                 case "oemquestion":
                     file.Write("/");
+                    break;
+                case "return":
+                    file.Write("enter");
                     break;
                 default:
                     file.Write(key.ToLower());

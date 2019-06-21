@@ -12,12 +12,15 @@ namespace WpfApplication8
             string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
             string destFile = System.IO.Path.Combine(targetPath, targetFile);
             System.IO.Directory.CreateDirectory(targetPath);
+
             try
             {
-                System.IO.File.Copy(sourceFile, destFile, true);                //bug dostęp do pliku
+                System.IO.File.Copy(sourceFile, destFile, true);
+                Console.WriteLine("Mail");
             }
-            catch(Exception ex)
+            catch(Exception e)
             {
+                
             }
 
             if (System.IO.Directory.Exists(sourcePath))
@@ -31,10 +34,6 @@ namespace WpfApplication8
                     System.IO.File.Copy(s, destFile, true);
                 }
             }
-            else
-            {
-                Console.WriteLine("Ścieżka źródłowa pliku nie istnieje ");
-            }
         }
 
         public void DelFile(string fileName)
@@ -43,9 +42,8 @@ namespace WpfApplication8
             {
                 System.IO.File.Delete(fileName);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
             }
         }
     }
